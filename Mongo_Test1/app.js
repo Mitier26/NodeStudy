@@ -34,8 +34,18 @@ async function run() {
     // const findUser = await users.find({}).toArray();
 
     // 20살 이상인 사람을 찾는다.
-    const findUser = await users.find({ age: { $gt: 20 } }).toArray();
-    console.log("result", findUser);
+    // const findUser = await users.find({ age: { $gt: 20 } }).toArray();
+    // console.log("result", findUser);
+
+    // const updateUser = await users.updateOne({ name: "wmg" }, { $set: { age: 44 } });
+
+    // console.log("result", updateUser);
+
+    // const deleteUsers = await users.deleteMany({ age: { $gt: 20 } });
+    // console.log("result", deleteUsers);
+
+    const userData = await users.find({ name: "영희" }).project({ _id: 0 }).toArray();
+    console.log("result", userData);
 }
 
 
